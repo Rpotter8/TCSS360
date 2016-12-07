@@ -1,8 +1,7 @@
 /**
-	Represents a Student in the system.
-	
-	Author: Ben Russell
-	Date: 	11/27/2016
+*	Represents a Student in the system.
+*	Author: Ben Russell
+*	Date: 	11/27/2016
 **/
 //imports
 var degree 				= require('./Degree.js');
@@ -21,12 +20,7 @@ connection.connect(function(err) {
   if (err) { console.log(err);};
 });
 
-
 var gpaData;
-
-
-	
-
 
 //export these functions.
 module.exports = {	
@@ -203,6 +197,5 @@ module.exports = {
 				console.log("query failed");
 			}
 		});
-	},
-	
+	},	
 }

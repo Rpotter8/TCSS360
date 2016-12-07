@@ -1,11 +1,12 @@
 /** 
-		A collection of Jobs
-		Author: Nursultan Irgaliyev
-		Date: 11/30/2016
+*	A collection of Jobs
+* 	Author: Nursultan Irgaliyev
+* 	Date: 11/30/2016
 **/
 	//imports
 	var mysql = require('mysql');
 	
+	//setting connection to mysql database.
 	var connection = mysql.createConnection ({
 		host : 'cssgate.insttech.washington.edu',
 		user : '_360team11',

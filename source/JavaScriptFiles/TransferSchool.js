@@ -1,8 +1,7 @@
 /**
-	A degree
-	
-	Author: Ben Russell
-	Date: 	11/29/2016
+*	A degree
+*	Author: Ben Russell
+*	Date: 	11/29/2016
 **/
 //imports
 var mysql		= require('mysql');

@@ -1,12 +1,13 @@
 /**
-	A class to represent Staff
-	Author: Nursultan Irgaliyev
-	Date: 12/5/2016
+*   A class to represent Staff
+*	Author: Nursultan Irgaliyev
+*	Date: 12/5/2016
 **/
 
 //imports 
 var mysql = require('mysql');
-	
+
+//setting connection to mysql database.
 var connection = mysql.createConnection({
 	host     : 'cssgate.insttech.washington.edu',
 	user     : '_360team11',

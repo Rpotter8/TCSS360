@@ -1,8 +1,8 @@
 //The default login page. Contains the header and footer used across the web app.
+//Holds different function calls to different page views.
 
 doctype html
 html
-  
   head
     link(rel='stylesheet', href='/css/index.css')
     title Student Acheivement Tracker
@@ -22,7 +22,6 @@ html
 // A script to call the next page upon credential verification.
 script.
   function move() {
-
     window.location.href = '/newpage'
 
   }
@@ -45,6 +44,7 @@ script.
     window.location.href = '/submit_add_skill'
   }
 
+// A script to change text
 script.
   function chagneText() {
     text = "Hello"

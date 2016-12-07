@@ -1,5 +1,3 @@
-
-
 // This is the driver for the web app. It runs the server as well as conatins information
 // on the individual views the web app has.
 
@@ -35,8 +33,8 @@ var express = require('express')
 
 , job = require('./source/JavaScriptFiles/JobCollection.js')
 , degree = require('./source/JavaScriptFiles/Degree.js')
-//A Data connection for searching the database
 
+//A Data connection for searching the database
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
 	host     : 'cssgate.insttech.washington.edu',
@@ -72,7 +70,7 @@ app.get('/list_students', function(req, res){
     if (err) {
       throw err;
     }
-    
+    //temp array to hold data
     var these = []
     these[0] = "Last Name 	First Name 	SID"
     for( var i = 0; i < results.length; ++i) {
@@ -82,7 +80,7 @@ app.get('/list_students', function(req, res){
     		these[i + 1] = results[i].lName + " 		" + results[i].fName+ "		" + results[i].studentID
     	}
     }
-
+    	//print info in the consolse and sent to view.
     	console.log(these)
     	res.render('list_students', {
     	title: results,
@@ -124,7 +122,7 @@ app.get('/newpage', function (req, res, next) {
 })
 
 
-// page for adding new students
+// page for going back to the mainPage
 app.get('/back_homepage', function (req, res, next) {
 
 	try {
@@ -198,6 +196,8 @@ app.get('/student_report', function (req, res, next) {
       	throw err;
     	}
     	console.log(results.length)
+
+    	 //temp array to hold data
     	var these = []
     	var job = []
     	var n = 0
@@ -209,6 +209,7 @@ app.get('/student_report', function (req, res, next) {
     	}
     	console.log(job.length)
 
+    	 //temp array to hold data
     	var peopleWith = []
     	var j = 0
     	for(var i = 0; i < results.length; ++i) {
@@ -219,6 +220,7 @@ app.get('/student_report', function (req, res, next) {
     	}
     	these[0] = Math.round(peopleWith.length/results.length*100) + "% of students who have graduted have had a job.\n\n\nPEOPLE WHO CURRENTLY HAVE JOBS:"
 
+    	 //temp array to hold data
     	var count = []
     	for(var i = 0; i < job.length; ++i) {
     		count[i] = 0
@@ -267,6 +269,8 @@ app.get('/gpa_report', function (req, res, next) {
     	}
     	average = average / results.length
     	console.log(average)
+
+    	 //temp array to hold data
     	var these = []
     	these[0] = "The Average Student GPA is: 		" + average.toFixed(2)
     	var count = 0
@@ -301,10 +305,9 @@ app.get('/gpa_report', function (req, res, next) {
     	these[6] = "Any student witha GPA below that is not included"
     	
 
-    res.render('list_students', {
-      title: results,
-      results: these
-
+    	res.render('list_students', {
+      	title: results,
+      	results: these
     });
   })
 })
@@ -499,7 +502,7 @@ app.get('/loaded_lookup_student_report', function (req, res, next) {
 	    			})
 				})	
 
-				})
+			})
 		}
 	})
 	
@@ -543,6 +546,7 @@ app.get('/loaded_student_report', function (req, res, next) {
 	}
 })
 
+//local host run
 app.listen(process.env.PORT || 3000, function () {
 	console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
 })

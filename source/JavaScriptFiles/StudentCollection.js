@@ -1,8 +1,7 @@
 /**
-	A collection of  Students 
-	
-	Author: Ben Russell
-	Date: 	11/27/2016
+*	A collection of  Students 
+*	Author: Ben Russell
+*	Date: 	11/27/2016
 **/
 //imports
 var mysql		= require('mysql');
@@ -143,8 +142,16 @@ module.exports = {
 		});
 		return null;
 	},
-
-	updateStudent: function(fName, lName, studentID, degree, degreeLevel, graduationTerm, 					gradYear, externalEmail, uwEmail, gpa) {
+	/**
+	* Update a student to the DB.
+	* Params:  fName: student's first name, lName; student's last name, studentID: student's id
+    * Params:  degree: student's degree, degreeLevel: student's degree level, 
+	* Params:  graduationTerm: student's grad term, gradYear: student's grad year,
+    * Params:  externalEmail: student's personal email, uwEmail: student's UW email,
+	* Params:  gpa: student's gpa
+	* return: boolean whether the query succeded.
+	**/
+	updateStudent: function(fName, lName, studentID, degree, degreeLevel, graduationTerm, gradYear, externalEmail, uwEmail, gpa) {
 		var post = {lName: lName,
 					fName: fName,
 					graduationTerm: graduationTerm, 

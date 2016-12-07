@@ -66,8 +66,12 @@ module.exports = {
         return true;
     },
 
+     /**
+    * List all the jobs.
+    **/
     listJobs: function(callback) {
         connection.query('SELECT * FROM job', 
+            //quere function.
 			function(err, data) {
 			    try{ 
 			        if (err) {
