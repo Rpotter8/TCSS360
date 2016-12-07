@@ -9,6 +9,7 @@
 //imports 
 var mysql = require('mysql');
 
+//setting connection to mysql database.
 var connection = mysql.createConnection({
     host: 'cssgate.insttech.washington.edu',
     user: '_360team11',
@@ -22,12 +23,12 @@ connection.connect(function(err) {
 });
 
 module.exports = {
+    
 /**
 *  method to add skills for the student
 *  param: studentID - id of the student to add skills to
 *  param: skill - skill being added
 **/
-
     addSkill: function(studentID, skill) {
         var post = { studentID: studentID,
             skill: skill
