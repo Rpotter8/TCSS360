@@ -56,10 +56,19 @@ Lookup Student:	By Mohib
 Add Job:		By Ryan
 Add Degree:	By Mohib
 Add Skill:	By MOhib
-At the moment all the above use cases are implemented, and are functioning well.
+At the moment all the above use cases are implemented, and are functioning.
 
 
 ISSUES:
+
+Many of the Objects we created in JavaScript for returning database query are not transfering out of 
+their file. We use the callback method that JavaScript has for the asychronous computing that is inherent
+to JavaScript but those functions don't consistently return results. We have workarounds in place for the functions
+that fail. This did cause us to have to deviate from our class diagram though. The class diagram represents
+what the connectivity between objects would be if we had managed to acheive the connectivity that we wanted.
+
+Additionally our testing has issues. We were unable to test the functionality in server.js becasue it is a router and acts sort of like our "main" function in Java. Because of the previously mentioned workarounds it was hard to test our queries. But every function that we did call from server.js has a test.
+
 
 
 
